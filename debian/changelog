@@ -1,3 +1,20 @@
+libevent (2.0.21-stable-2ubuntu0.16.04.1) xenial-security; urgency=medium
+
+  * SECURITY UPDATE: buffer overread in name_parse()
+    - debian/patches/CVE-2016-10195.patch: fix length check in evdns.c.
+    - CVE-2016-10195
+  * SECURITY UPDATE: integer overflow in evutil_parse_sockaddr_port()
+    - debian/patches/CVE-2016-10196.patch: use size_t for length in
+      evutil.c.
+    - CVE-2016-10196
+  * SECURITY UPDATE: OOB read via empty hostname
+    - debian/patches/CVE-2016-10197-1.patch: check result in evdns.c.
+    - debian/patches/CVE-2016-10197-2.patch: add test to
+      test/regress_dns.c.
+    - CVE-2016-10197
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 10 Mar 2017 14:12:18 -0500
+
 libevent (2.0.21-stable-2) unstable; urgency=high
 
   * Fix CVE-2014-6272: potential heap overflow in buffer/bufferevent APIs.
